@@ -1,12 +1,14 @@
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
+from dotenv import load_dotenv
 
-embedding = OpenAIEmbeddings(model='text-embedding-3-small')
+load_dotenv()
+
+embedding = GoogleGenerativeAIEmbeddings(model="gemini-embedding-2-preview")
 
 def embed_and_store(chunks):
 
     vector_store = FAISS.from_documents(chunks, embedding)
-
     return vector_store
 
 if __name__ == '__main__':
