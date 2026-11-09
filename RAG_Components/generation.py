@@ -1,16 +1,14 @@
-import os
+from Config.load_environment import get_keys
 from google import genai
-from dotenv import load_dotenv
-load_dotenv()
 
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-gemma_model = os.getenv("GEMMA_MODEL")
+
+gemini_api_key, gemini_model = get_keys()
 
 client = genai.Client(api_key=gemini_api_key)
 
 def get_response(context):
     response = client.models.generate_content(
-        model = gemma_model,
+        model = gemini_model,
         content = context
     )
 
