@@ -10,7 +10,7 @@ def get_keys():
     load_dotenv()
 
     gemini_api_key = os.getenv("GEMINI_API_KEY")
-    gemini_model = os.getenv("GEMMA_MODEL")
+    gemini_model = os.getenv("GEMINI_MODEL")
 
     return gemini_api_key, gemini_model
 
