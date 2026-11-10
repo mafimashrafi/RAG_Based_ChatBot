@@ -1,0 +1,16 @@
+name: tests
+
+on:
+  push:
+    paths-ignore: [ "**.md", "outputs/**" ]
+  pull_request:
+    paths-ignore: [ "**.md", "outputs/**" ]
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Also run live Gemini tests (10 API calls)"
+        type: boolean
+        default: false
+
+job:
+  

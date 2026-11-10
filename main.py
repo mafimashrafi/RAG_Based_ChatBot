@@ -4,12 +4,15 @@ from RAG_Components.retrival import retriv_chunks
 from RAG_Components.generation import get_response
 from RAG_Components.augmentation import get_final_prompt
 
-url = input('Enter URL: ')
-query = input("Enter your question about the content of the URL: ")
+from middleware.query_multiplier import get_queries
+from utils.query_input import get_query
 
+url, query = get_query()
+
+all_query_dict = get_queries(query)
 transcript = get_transcript(url)
 chunks = get_chunks(transcript)
-context = retriv_chunks(chunks, query)
+context = retriv_chunks(chunks, all_query_dict)
 prompt = get_final_prompt(context, query)
 resp = get_response(prompt)
 

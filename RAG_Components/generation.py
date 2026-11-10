@@ -9,7 +9,7 @@ client = genai.Client(api_key=gemini_api_key)
 def get_response(context):
     response = client.models.generate_content(
         model = gemini_model,
-        content = context
+        contents = context
     )
 
     return response.text
