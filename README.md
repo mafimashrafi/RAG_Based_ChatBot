@@ -26,7 +26,8 @@ A smart conversational assistant built with <strong>LangChain</strong> and <stro
 ├── main.py              # Main application entry point
 ├── README.md            # Project documentation
 └── .gitignore           # Git ignore rules
-
+```
+---
 
 ## 🚀 Getting Started
 
@@ -71,6 +72,7 @@ Ensure you have the following installed:
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    ```
+---
 
 ## 💡 Usage
 
@@ -82,11 +84,15 @@ python main.py
 
 Follow the prompts to enter a YouTube video URL and ask questions regarding its content.
 
+---
+
 ## 🛠️ Built With
 
 - [**LangChain**](https://www.langchain.com/) – Framework for developing applications powered by language models.
 - **Python** – Primary programming language.
 - **Vector Database / Embeddings** – For semantic document indexing and retrieval.
+
+---
 
 ## 🤝 Contributing
 
